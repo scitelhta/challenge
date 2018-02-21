@@ -8,17 +8,29 @@ app.config(function($routeProvider) {
         .when("/", {
             templateUrl: "home.html"
         })
-        .when("/events", {
-            templateUrl: "events.html"
+
+        .when("/register", {
+            templateUrl: "index.php/vista/get/register"
         })
-        .when("/about", {
-            templateUrl: "about.html"
+        .when("/login", {
+            templateUrl: "index.php/vista/get/login"
         })
-        .when("/tickets", {
-            templateUrl: "tickets.html"
+        .when("/cursos", {
+            templateUrl: "index.php/ajax/query/curso"
         })
-        .when("/map", {
-            templateUrl: "nap.html"
+        .when("/materias", {
+            templateUrl: "index.php/ajax/query/materia"
+        })
+        .when("/categorias", {
+            templateUrl: "index.php/ajax/query/categoria"
+        }).when("/curso", {
+        templateUrl: "index.php/ajax/form/curso"
+        })
+        .when("/materia", {
+            templateUrl: "index.php/ajax/form/materia"
+        })
+        .when("/categoria", {
+            templateUrl: "index.php/ajax/form/categoria"
         }).otherwise({
         template: "<h1>None</h1><p>Nothing has been selected</p>"
     });;
@@ -27,6 +39,7 @@ app.config(function($routeProvider) {
 
 app.controller('challengeController', function($rootScope, $scope, $uibModal, $location,$http) {
     $scope.prueba = "Hola, Mundo";
+
 
 
 

@@ -1,0 +1,54 @@
+.header {
+    height: 50px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+.logo {
+    height: 100%;
+    width: auto;
+    float: left;
+}
+
+
+.logo img {
+    height: 100%;
+    width: auto;
+}
+
+.menu {
+    float: right;
+}
+
+.clogo {
+    width: 50%;
+    height: auto;
+    margin: 10px;
+}
+
+
+ng-view {
+    position: absolute;
+    width:100%;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+@media (min-width: 768px) {
+
+    ng-view {
+        left:200px;
+    }
+
+    .header {
+        margin-left: 200px;
+
+    }
+
+
+}
