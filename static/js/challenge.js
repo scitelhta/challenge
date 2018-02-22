@@ -1,4 +1,4 @@
-
+window.usuario = '';
 var app = angular.module('challengeApp', ["ngRoute", 'ngAnimate', "ui.bootstrap"]);
 
 app.config(function($routeProvider) {
@@ -6,6 +6,7 @@ app.config(function($routeProvider) {
 
     $routeProvider
         .when("/", {
+
             templateUrl: function(params){ return  "index.php/ajax/query/curso?usuario=" + window.usuario;   }
         })
 

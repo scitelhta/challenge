@@ -13,7 +13,7 @@ class Curso_model extends CI_Model {
         Curso c left join User u on c.user_id=u.id left join Materia m on m.curso_id=c.id";
 
 
-        if ($this->input->post_get('usuario')) {
+        if ($this->input->post_get('usuario') && ($this->input->post_get('usuario')!='undefined')) {
             $correo = $this->db->escape($this->input->post_get('usuario'));
             $q .= " WHERE u.correo = {$correo}";
         }
