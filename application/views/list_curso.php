@@ -1,14 +1,31 @@
 <?php
 
 ?>
+<div class="principal">
 <h3>Cursos</h3>
 
-<a href="#!/curso">Nuevo</a>
+<a ng-if="login.logged"  class="button nuevo    " href="#!/curso">Nuevo</a>
 
-<ul>
-        <?php foreach ($cursos as $item):?>
+<table class="tabla">
+        <?php $i = 0; foreach ($cursos as $item): ?>
 
-    <li><?php echo $item;?></li>
+            <?php if (!$i): ?>
+                <thead>
+                <?php foreach ($item as $k=>$v):?>
+                <th><?php print $k;?></th>
+                <?php endforeach; ?>
+                </thead>
+                <tbody>
+                <?php endif;?>
 
-<?php endforeach;?>
-</ul>
+
+    <tr  ng-click="abrir('curso', '<?=$item->id?>')">
+            <?php foreach ($item as $k=>$v):?>
+                <td><?php print $v;?></td>
+        <?php endforeach;?>
+    </tr>
+
+<?php $i++; endforeach;?>
+                </tbody>
+</table>
+</div>

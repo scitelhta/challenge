@@ -1,7 +1,15 @@
 .header {
     height: 50px;
     width: 100%;
-    border: 1px solid black;
+    position: fixed;
+    top: 0;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+12,e6f8fd+30,c8eefb+54,bee4f8+75,b1d8f5+100;Blue+Pipe+%232 */
+    background: #e1ffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
 }
 
 
@@ -17,9 +25,7 @@
     width: auto;
 }
 
-.menu {
-    float: right;
-}
+
 
 .clogo {
     width: 50%;
@@ -29,20 +35,29 @@
 
 
 ng-view {
-    position: absolute;
+    position: relative;
     width:100%;
+    margin-top: 180px;
+    height: 100%;
 }
 
 .header {
     height: 50px;
     width: 100%;
-    border: 1px solid black;
+    _border: 1px solid black;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
 
 @media (min-width: 768px) {
 
     ng-view {
-        left:200px;
+        padding-left:200px;
+        padding-right:200px;
     }
 
     .header {
@@ -50,5 +65,103 @@ ng-view {
 
     }
 
+
+}
+
+.field.full {
+    width:100% !important;
+}
+
+.principal {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.tabla{
+    width:100%;
+    border-style:groove;
+}
+
+.nuevo {
+    float: right;
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    margin-top: -40px;
+}
+
+ .nuevo2 {
+    display:none;
+}
+
+.form.curso .materias .nuevo1 {
+    display:none;
+}
+
+
+.form.curso .materias .nuevo2 {
+    display:block;
+}
+.menu {
+    height: 40px;
+    margin-top: 5px;
+    opacity: 0.4;
+    margin-left: 10px;
+    margin-right: 10px;
+    position:absolute;
+}
+
+.menu img {
+    height:40px;
+}
+
+@media (min-width: 768px) {
+    .menu {
+        display:none;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        float:right;
+    }
+
+}
+
+.tabla thead th {
+text-align:center;
+}
+
+.tabla thead {
+    border-bottom: 2px solid #9999ff;
+    text-align:center;
+}
+
+.tabla tr {
+    border-top: 1px dotted rgba(1,1,1,0.4);
+    line-height: 40px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.tabla tr:hover {
+font-weight: bold;
+}
+
+.tabla tbody tr:nth-child(odd) {
+    background-color: rgba(99,99,200, 0.1);
+
+}
+.tabla tbody tr:nth-child(even) {
+    background-color: rgba(99,199,200, 0.1);
+
+}
+
+
+ng-view.ng-scope>h3 {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 
 }

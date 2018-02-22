@@ -19,15 +19,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link href="<?php echo base_url(); ?>static/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>static/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>static/css/challenge.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:300,600'>
     <link href="<?php echo base_url(); ?>static/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>static/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>static/css/sidebar.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>static/css/challenge.css" rel="stylesheet">
     <!--script src="<?php echo base_url(); ?>static/js/bootstrap.min.js"></script-->
+    <script src="<?php echo base_url(); ?>static/js/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>static/js/js.cookie.js"></script>
+    <script src="<?php echo base_url(); ?>static/js/parsley.min.js"></script>
     <script src="<?php echo base_url(); ?>static/js/angular.min.js"></script>
     <script src="<?php echo base_url(); ?>static/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="<?php echo base_url(); ?>static/js/angular-animate.min.js"></script>
     <script src="<?php echo base_url(); ?>static/js/angular-route.min.js"></script>
-    <script src="<?php echo base_url(); ?>static/js/challenge.js"></script>
 
 </head>
 <body>
@@ -54,7 +59,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="#!/login"><i class="fa fa-sign-in famenu"></i><span class="fsmenu">Ingresar</span></a>
         </li>
         <li ng-if="login.logged">
-            <a href="#!/logout"><i class="fa fa-sign-out famenu"></i><span class="fsmenu">Salir</span></a>
+            ({{usuario}})<br>
+            <a ng-click="logout()"><i class="fa fa-sign-out famenu"></i><span class="fsmenu">Salir</span></a>
         </li>
 
     </ul>
@@ -64,12 +70,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <div class="header">
+    <div class="menu"><img src="<?php echo base_url(); ?>static/img/menu.png" ng-click="toggle(1)"/></div>
     <div class="logo"><img src="<?php echo base_url(); ?>static/img/Challenge16.png"/></div>
-    <div class="menu"><a href="#/login">Login</a></div>
 
 </div>
 
 <ng-view></ng-view>
 
+
 </body>
+
+<script src="<?php echo base_url(); ?>static/js/style.js"></script>
+<script src="<?php echo base_url(); ?>static/js/challenge.js"></script>
+
+
 </html>

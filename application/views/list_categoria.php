@@ -1,14 +1,31 @@
 <?php
 
 ?>
+<div class="principal">
 <h3>Categorías</h3>
 
-<a href="#!/categoria">Nuevo</a>
+<a ng-if="login.logged" class="button nuevo" href="#!/categoria">Nuevo</a>
 
-<ul>
-    <?php foreach ($categorias as $item):?>
+<table class="tabla">
+    <?php $i = 0; foreach ($categorias as $item): ?>
 
-    <li><?php echo $item;?></li>
+    <?php if (!$i): ?>
+    <thead>
+    <?php foreach ($item as $k=>$v):?>
+        <th><?php print $k;?></th>
+    <?php endforeach; ?>
+    </thead>
+    <tbody>
+    <?php endif;?>
 
-<?php endforeach;?>
-</ul>
+
+    <tr  ng-click="abrir('categoria', '<?=$item->id?>')">
+        <?php foreach ($item as $k=>$v):?>
+            <td><?php print $v;?></td>
+        <?php endforeach;?>
+    </tr>
+
+    <?php $i++; endforeach;?>
+    </tbody>
+</table>
+</div>

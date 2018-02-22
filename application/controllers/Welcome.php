@@ -20,7 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-        $this->load->model('curso_model');
+
+        $this->load->model('curso_model', '', TRUE);
 		$this->load->view('main');
 	}
 }
